@@ -9,12 +9,17 @@ Using Cypress, we will create a test automation framework with the following fea
 
 ## 🚀 Lets get started...
 
-## 🟩 PART 1️⃣
-
 ## 1. Create an empty repo in VCS (e.g. GitHub) and clone
 ## 2. Initialize node project and install cypress
 
-```
 npm install
+
+## 1. Run In headless
+
+ npx cypress open
+
+## 2. Run in headed mode
+ 
+ npx cypress run
 
 ## THANK YOU 🙂

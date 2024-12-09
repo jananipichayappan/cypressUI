@@ -6,6 +6,7 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
     e2e: {
         baseUrl: "https://magento.softwaretestingboard.com",
+        pageLoadTimeout: 120000,
         setupNodeEvents(on, config) {
             on("file:preprocessor", createBundler({ plugins: [createEsbuildPlugin.default(config)], }));
             preprocessor.addCucumberPreprocessorPlugin(on, config);
