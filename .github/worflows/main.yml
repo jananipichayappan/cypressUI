@@ -1,0 +1,23 @@
+name: Run All Tests
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Test-on-Chrome:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout GitCode
+          uses: actions/checkout@v3.3.0
+
+        - name: Install dependencies
+          uses: cypress-io/github-action@v5.0.8
+          with:
+            runTests: false
+
+        - name: Run Cypress Tests
+          uses: cypress-io/github-action@v5.0.8
+          with:
+            record: true
+            parallel: true
+            command: "npx cypress run"
