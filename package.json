@@ -1,0 +1,28 @@
+{
+  "name": "cybddframework",
+  "version": "1.0.0",
+  "description": "A test automation framework using cypress and cucumber",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:headless": "cypress open",
+    "cy:chrome": "cypress run --config baseUrl=${baseUrl} --browser chrome",
+    "cy:test": "cypress run --config baseUrl=${baseUrl}",
+    "generate-cucumber-report": "node generateCucumberReport.js"
+  },
+  "keywords": [],
+  "author": "Rohit Shinde",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.17.4",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/step_definitions/",
+    "nonGlobalStepDefinitions": false
+  },
+  "dependencies": {
+    "cucumber-html-reporter": "^7.2.0"
+  }
+}
